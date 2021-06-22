@@ -1,0 +1,11 @@
+t = linspace(-2, 2);
+f = @(t) sqrt(1 ./ (3 - 2 * sqrt(1 + t .* t)));
+y = f(t);
+y(imag(y) != 0) = NaN;
+clf;
+plot(t, y);
+grid minor;
+ax;
+hor(1);
+vert(-sqrt(5) / 2);
+vert(sqrt(5) / 2);

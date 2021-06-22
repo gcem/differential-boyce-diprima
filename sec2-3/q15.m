@@ -1,0 +1,11 @@
+t = linspace(-3, 3, 1000);
+f = @(t) (-1 + sqrt(4 * t .* t - 15)) / 2;
+y = f(t);
+y(imag(y) != 0) = NaN;
+clf;
+plot(t, y);
+grid minor;
+ax;
+vert(2);
+vert(-sqrt(15) / 2);
+vert(sqrt(15) / 2);
