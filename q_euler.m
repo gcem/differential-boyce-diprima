@@ -27,8 +27,6 @@ function q_euler(f, y0, t0, npts, dist, reslist, sln = @(t) zeros(size(t)))
   
   output_precision(6, 'local')
   
-  t0 = 0;
-  
   resultmat = [];
   
   h = ishold;
