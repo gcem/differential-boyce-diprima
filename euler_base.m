@@ -23,7 +23,7 @@
 ## Author: cem <cem@debian>
 ## Created: 2021-07-09
 
-function ys = euler (f, ts, y0)
+function ys = euler_base(f, ts, y0)
   ys = ts * 0;
   ys(1) = y0;
   
