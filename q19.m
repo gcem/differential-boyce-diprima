@@ -8,7 +8,7 @@ function q19
 ##  vals = 0.65:.01:0.7;
   vals = 0.67:.001:0.68;
   for a = vals
-    q_euler(f, a, 0, 600, .01, [1], @(t) zeros(size(t)), 2);
+    euler(f, a, 0, 600, .01, [1], @(t) zeros(size(t)), 2, 0);
   endfor
   hold off
   leg = num2str(vals');

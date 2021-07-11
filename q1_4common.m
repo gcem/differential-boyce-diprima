@@ -24,6 +24,6 @@
 ## Created: 2021-07-09
 
 function retval = q1_4common(f, y0, sln = @(t) zeros(size(t)))
-  q_euler(f, y0, 0, 4, .1, [1, 2, 4, 10], sln);
+  euler(f, y0, 0, 4, .1, [1, 2, 4, 10], sln);
   
 endfunction

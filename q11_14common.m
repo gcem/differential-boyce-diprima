@@ -24,5 +24,5 @@
 ## Created: 2021-07-11
 
 function q11_14common(f, y0)
-  q_euler(f, y0, 0, 6, .5, [5, 10, 20, 50]);
+  euler(f, y0, 0, 6, .5, [5, 10, 20, 50]);
 endfunction
