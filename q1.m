@@ -26,8 +26,9 @@
 function retval = q1 (input1, input2)
   y0 = 1;
   f = @(t, y) 3 + t - y;
+  sln = @(t) 3 + t - 1 - exp(-t);
   
   clf
-  q1_4common(f, y0);
+  q1_4common(f, y0, sln);
   title 'Question 1';
 endfunction
