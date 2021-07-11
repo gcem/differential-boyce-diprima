@@ -23,48 +23,7 @@
 ## Author: cem <cem@debian>
 ## Created: 2021-07-09
 
-function retval = q1_4common (f, y0, sln = @(t) zeros(size(t)), ...
-  npts = 4, dist = .1, reslist = [1, 2, 4, 10])
-  
-  output_precision(6, 'local')
-  
-  t0 = 0;
-  
-  resultmat = [];
-  
-  h = ishold;
-  hold on;
-  # resolution is the number of steps per .1 interval
-  for resolution = reslist
-    step = dist / resolution;
-    t = (0:resolution*npts) * step + t0;
-    y = euler(f, t, y0);
-    plot(t, y, 'DisplayName', sprintf('h = %f', step));
-    
-    step;
-    values = y(1:resolution:end);
-    resultmat = [resultmat, values'];
-  endfor
-  legend show
-  grid minor
-  ax
-  
-  if !h
-    hold off
-  endif
-  
-  ts = (0:npts)*dist + t0;
-  actual = sln(ts);
-  resultmat = [actual', resultmat];
-  printf('Results\n');
-  printf('  Expected   ');
-  printf('h=%-7.3f ', dist ./ reslist); # print column headers
-  printf('\n');
-  disp(resultmat);
-  printf('\nErrors\n');
-  printf('   t          ');
-  printf('h=%-8.3f ', dist ./reslist);
-  printf('\n');
-  disp([ts', resultmat(:, 2:end) - repmat(actual', 1, length(reslist))]);
+function retval = q1_4common(f, y0, sln = @(t) zeros(size(t)))
+  q_euler(f, y0, 0, sln, 4, .1, [1, 2, 4, 10]);
   
 endfunction
