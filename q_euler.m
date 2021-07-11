@@ -23,7 +23,7 @@
 ## Author: cem <cem@debian>
 ## Created: 2021-07-11
 
-function q_euler(f, y0, t0, npts, dist, reslist, sln = @(t) zeros(size(t)))
+function q_euler(f, y0, t0, npts, dist, reslist, sln = @(t) zeros(size(t)), linewidth = 1)
   
   output_precision(6, 'local')
   
@@ -36,7 +36,7 @@ function q_euler(f, y0, t0, npts, dist, reslist, sln = @(t) zeros(size(t)))
     step = dist / resolution;
     t = (0:resolution*npts) * step + t0;
     y = euler(f, t, y0);
-    plot(t, y, 'DisplayName', sprintf('h = %f', step));
+    plot(t, y, 'LineWidth', linewidth, 'DisplayName', sprintf('h = %f', step));
     
     step;
     values = y(1:resolution:end);
@@ -44,7 +44,6 @@ function q_euler(f, y0, t0, npts, dist, reslist, sln = @(t) zeros(size(t)))
   endfor
   legend show
   grid minor
-  ax
   
   if !h
     hold off

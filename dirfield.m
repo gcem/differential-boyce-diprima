@@ -4,9 +4,11 @@
 # element-wise on its input matrices. it should
 # output the change rate of the dependent variable
 # (second argument)
-function dirfield(f, dif, ymin, ymax)
-  xmax = (ymax - ymin) / 2;
-  xmin = -xmax;
+function dirfield(f, dif, ymin, ymax, xmin, xmax)
+  if nargin == 4
+    xmax = (ymax - ymin) / 2;
+    xmin = -xmax;
+  endif
   [xx, yy] = meshgrid(xmin:dif:xmax, ymin:dif:ymax);
   vx = ones(size(xx));
   vy = f(xx, yy);
