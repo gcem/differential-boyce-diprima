@@ -23,13 +23,12 @@
 ## Author: cem <cem@debian>
 ## Created: 2021-07-09
 
-function retval = q1_4common (f, y0, sln)
+function retval = q1_4common (f, y0, sln = @(t) zeros(size(t)), ...
+  npts = 4, dist = .1, reslist = [1, 2, 4, 10])
+  
   output_precision(6, 'local')
   
   t0 = 0;
-  npts = 4;
-  dist = .1;
-  reslist = [1, 2, 4, 10];
   
   resultmat = [];
   
