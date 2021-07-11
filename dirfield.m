@@ -10,10 +10,13 @@ function dirfield(f, dif, ymin, ymax)
   [xx, yy] = meshgrid(xmin:dif:xmax, ymin:dif:ymax);
   vx = ones(size(xx));
   vy = f(xx, yy);
+  badValues = !arrayfun(@isreal, vy);
   norm = sqrt(vx .* vx + vy .* vy);
   vx = vx ./ norm * (dif / 2 * 1);
   vy = vy ./ norm * (dif / 2 * 1);
 ##  quiver(xx, yy, vx ./ norm, vy ./ norm, 0.8);
+  
+  yy(badValues) = NaN;
   
   startx = xx - vx;
   endx = xx + vx;
