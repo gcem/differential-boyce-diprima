@@ -23,7 +23,7 @@
 ## Author: cem <cem@debian>
 ## Created: 2021-07-11
 
-function q_euler(f, y0, t0, sln, npts, dist, reslist)
+function q_euler(f, y0, t0, npts, dist, reslist, sln = @(t) zeros(size(t)))
   
   output_precision(6, 'local')
   
