@@ -1,0 +1,1 @@
+subplot(2,1,1); q6b; subplot(2,1,2); q6d;
