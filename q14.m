@@ -1,19 +1,23 @@
 function q14
   clf
-  hold on
-  helper(.2)
-  helper(.4)
-  helper(.6)
-  helper(.8)
-  
-  helper(.3)
-  legend show
-  grid minor
+  rho = [3.2, 2.6, 2.8, 3.4];
+  for k = 1:length(rho)
+    subplot(length(rho)/2,2,k);
+    title(sprintf('\\rho = %f', rho(k)))
+    hold on
+    helper(.2, rho(k))
+    helper(.4, rho(k))
+    helper(.6, rho(k))
+    helper(.8, rho(k))
+    helper(.3, rho(k))
+    legend show
+    legend location eastoutside
+    grid minor
+  endfor
 endfunction
 
-function helper(u0)
-  rho = 3.2;
-  u = zeros(1, 20);
+function helper(u0, rho)
+  u = zeros(1, 30);
   u(1) = u0
   
   for k = 2:length(u)
