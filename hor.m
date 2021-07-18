@@ -1,4 +1,4 @@
-function hor(y, dispname = '')
+function hor(y, dispname = sprintf('y = %f', y))
   h = ishold;
   hold on;
   plot(xlim, [y y], 'displayname', dispname);
