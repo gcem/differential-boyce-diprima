@@ -1,5 +1,5 @@
 function q15
-  y = @(t) exp(-3/2*t) .* (1 - 5 * t);
+  y = @(t) exp(-3/2*t) .* (1 - 5/2 * t);
   t = linspace(0, 5, 10000);
   yt = y(t);
   plot(t, yt)
