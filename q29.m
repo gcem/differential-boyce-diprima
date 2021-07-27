@@ -1,8 +1,8 @@
-function q28
+function q29
   tmax = 20;
   t = linspace(0, tmax, 1000);
-  uh = @(t) sin(t * sqrt(2)) * sqrt(2);
-  duh = @(t) 2 * cos(t * sqrt(2));
+  uh = @(t) exp(-t/8) .* sin(t * sqrt(127) / 8) * (16 / sqrt(127));
+  duh = @(t) uh(t) * (-1/8) + 2 * exp(-t/8) .* cos(t * sqrt(127) / 8);
   
   u = uh(t);
   du = duh(t);
