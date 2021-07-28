@@ -42,5 +42,6 @@ function q32
   plot(epv, pers, 'o;period;', 'linewidth', 3, epv, amps, 'o;amplitude;', 'linewidth', 3);
   xlim([0 .4])
   grid on
+  xlabel '\epsilon'
   
 endfunction

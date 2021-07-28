@@ -44,5 +44,6 @@ function q32f
   ylim([0 8])
   grid on
   legend location northoutside
+  xlabel '\epsilon'
   
 endfunction
