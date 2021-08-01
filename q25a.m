@@ -1,5 +1,5 @@
-function q24
-  ws = [.5 .8 1 1.25 1.5 2];
+function q25a
+  ws = .5:.25:1.9;
   fig = figure;
   for k = 1:length(ws)
     if k <= length(ws) / 2
@@ -10,7 +10,7 @@ function q24
     
     w = ws(k);
     
-    f = @(uv, t) [uv(2), cos(w*t) - uv(1) - 1/5*uv(1).^3];
+    f = @(uv, t) [uv(2), cos(w*t) - uv(1) - 1/5*uv(1).^3 - 1/5*uv(2)];
     uv0 = [0, 0];
     
     tmax = 40*pi;
