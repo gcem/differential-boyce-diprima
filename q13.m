@@ -1,1 +1,1 @@
-function q13  c1 = -2/7;  c2 = 9/7;    x = [linspace(0, 0.1, 10000)(2:end), ... exclude 0    linspace(0.1, 3, 1000)];  y = c1 * power(x, -1/2) + c2 * x .^ 3;    plot(x, y, [.5 1.5], [1 - 4/2, 1 + 4/2]);  ylim([-20, 20])  axendfunction
+function q13  c1 = 2;  c2 = -1;    x = [linspace(0, 0.1, 10000)(2:end), ... exclude 0    linspace(0.1, 3, 1000)];  y = c1 * power(x, 3/2) + c2 ./ x;    plot(x, y, [.5 1.5], [1 - 4/2, 1 + 4/2]);  ylim([-30, 30])  axendfunction
