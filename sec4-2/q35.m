@@ -6,6 +6,6 @@ function c = q35
   plot(t, y(t))
   ax
   grid minor
-  hor(2/3, 'y = 2 / 3')
+  hor(2/3, 'name', 'y = 2 / 3')
   legend show
 endfunction

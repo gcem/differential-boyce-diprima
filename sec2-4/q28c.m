@@ -45,7 +45,7 @@ function retval = q28c (input1, input2)
   legend('v values that will be attained during the flight', 'v values that won''t be reached', 'v_{final}')
   xlabel 'k (N / (m/s))'
   ylabel 'velocity (m/s)'
-  hor(10, 'v = 10m/s')
+  hor(10, 'name', 'v = 10m/s')
   legend show 
   
 ##  vv = linspace(0, m*g/k, 10000); # mg/k is the limiting velocity
@@ -54,8 +54,8 @@ function retval = q28c (input1, input2)
 ##  ax
 ##  xlabel height
 ##  ylabel speed
-##  vert(30, 'x=30m (a)')
-##  hor(10, 'v=10m/s (b)')
+##  vert(30, 'name', 'x=30m (a)')
+##  hor(10, 'name', 'v=10m/s (b)')
 ##  legend show
 
 endfunction

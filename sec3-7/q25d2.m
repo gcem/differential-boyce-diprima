@@ -24,7 +24,7 @@ function q25d2
     
     if rem(k, ceil(length(gammas) / 10)) == 0
     plot(t, ut, 'displayname', sprintf('\\bf\\gamma = %f', gamma));
-    vert(tmin, '')
+    vert(tmin, 'name', '')
     endif
   endfor
   

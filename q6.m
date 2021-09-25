@@ -8,5 +8,5 @@ function q6
   xticks(0:pi:20)
   grid on
   ylim([-.1 1.1])
-  hor(.5)
+  hor(.5, 'style', '--')
 endfunction

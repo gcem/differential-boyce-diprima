@@ -22,7 +22,7 @@ function q25a_b
     
     plot(t, ut, 'displayname', sprintf('\\bf\\gamma = %f', gamma));
     tmin = fsolve(@(t) u(t) - val, tguess);
-    vert(tmin, '')
+    vert(tmin, 'name', '')
     tmins(k) = tmin;
   endfor
   
