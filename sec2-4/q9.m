@@ -30,6 +30,6 @@ function retval = q9 (input1, input2)
   plot(t, y1, 'r', t, y2, 'r');
   ax
   grid minor
-  ob(1, 'b--')
-  ob(-1, 'b--')
+  ob(1, 'style', 'b--')
+  ob(-1, 'style', 'b--')
 endfunction
