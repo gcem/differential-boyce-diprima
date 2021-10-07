@@ -1,0 +1,1 @@
+function q8c  t = linspace(0, 1.4, 1000);  c1 = 11/3;  c2 = -2/3;  x1 = c1 * exp(2*t) + c2 * exp(-t);  x2 = 1/2 * c1 * exp(2*t) + 2 * c2 * exp(-t);  plot(x1, x2, ';solution;');  xlim([0, 60])  ylim([0, 60])  xlabel 'x_1'  ylabel 'x_2'  ob(1/2, 'name', 'x_1 = 2x_2'); % plot x1 = 2*x2 line  legend showendfunction
