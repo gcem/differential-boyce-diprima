@@ -8,7 +8,9 @@ function qe2
   
   norm = sqrt(dx1.*dx1 + dx2.*dx2);
   
+  subplot(1,2,1);
   quiver(x1, x2, dx1 ./ norm, dx2 ./ norm, 0.6);
+  title 'Direction field and some solutions (phase portrait)'
   
   axis equal
   xlim(lims);
@@ -33,4 +35,15 @@ function qe2
   plot(sln2(1,:),sln2(2,:), ';sln2;')
   plot(sln3(1,:),sln3(2,:), ';sln3;')
   plot(sln4(1,:),sln4(2,:), ';sln4;')
+  
+  subplot(1,2,2);
+  title 'Some plots of x_1';
+  hold on
+  plot(t,sln1(2,:), ';sln1;')
+  plot(t,sln2(2,:), ';sln2;')
+  plot(t,sln3(2,:), ';sln3;')
+  plot(t,sln4(2,:), ';sln4;')
+  xlim([-.6 .6])
+  ylim([-5 5])
+  ax
 endfunction
