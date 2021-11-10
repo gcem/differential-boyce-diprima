@@ -15,4 +15,22 @@ function qe2
   ylim(lims);
   
   ax
+  ob(2)
+  ob(-2)
+  
+  % plot some solutions
+  t = linspace(-3, 3, 1000);
+  v1 = [1;-2] * exp(-t);
+  v2 = [1;2] * exp(3*t);
+  
+  sln1 = 0.4*(v1 + v2);
+  sln2 = 0.4*(v1 - v2);
+  sln3 = 0.4*(-v1 + v2);
+  sln4 = 0.4*(4*v1 + 0.3*v2);
+  
+  hold on
+  plot(sln1(1,:),sln1(2,:), ';sln1;')
+  plot(sln2(1,:),sln2(2,:), ';sln2;')
+  plot(sln3(1,:),sln3(2,:), ';sln3;')
+  plot(sln4(1,:),sln4(2,:), ';sln4;')
 endfunction
