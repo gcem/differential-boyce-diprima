@@ -1,20 +1,7 @@
 function qe2
   A = [1 1; 4 1];
-  lims = [-3, 3];
-  x = linspace(lims(1), lims(2), 40);
-  [x1, x2] = meshgrid(x);
-  dx1 = A(1,1) * x1 + A(1,2) * x2;
-  dx2 = A(2,1) * x1 + A(2,2) * x2;
-  
-  norm = sqrt(dx1.*dx1 + dx2.*dx2);
-  
-  subplot(1,2,1);
-  quiver(x1, x2, dx1 ./ norm, dx2 ./ norm, 0.6);
-  title 'Direction field and some solutions (phase portrait)'
-  
-  axis equal
-  xlim(lims);
-  ylim(lims);
+  subplot(1,2,1)
+  df3(A)
   
   ax
   ob(2)
