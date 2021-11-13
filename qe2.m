@@ -1,7 +1,7 @@
 function qe2
   A = [1 1; 4 1];
   subplot(1,2,1)
-  df3(A)
+  df2(A)
   
   ax
   ob(2)

@@ -1,6 +1,6 @@
 function qe3
   A = [-3, sqrt(2); sqrt(2), -2];
-  df3(A);
+  df2(A);
   ax
   
   t = linspace(-5,5,1000);

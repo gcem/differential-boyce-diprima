@@ -6,7 +6,7 @@
 %% Draws the direction field in [-range,range] on both axes. Draws n arrows
 %% on both directions.
 
-function df3(A, range = 3, n = 40)
+function df2(A, range = 3, n = 40)
   lims = [-range, range];
   x = linspace(lims(1), lims(2), n);
   [x1, x2] = meshgrid(x);
