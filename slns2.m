@@ -4,13 +4,18 @@
 function slns2(f = @(t, c1, c2) [t;t], c1s = linspace(-1,1,5), c2s = c1s, ...
    tmin = -5, tmax = 5)
   t = linspace(tmin, tmax, 100);
+  solutionCount = length(c1s) * length(c2s);
+  x1 = zeros(length(t), solutionCount);
+  x2 = x1;
   hold on
+  j = 1;
   for c1 = c1s
     for c2 = c2s
       x = f(t, c1, c2);
-      plot(x(1,:), x(2,:), ...
-        'displayname', sprintf('%.1f, %.1f', c1, c2), ...
-        'linewidth', 2);
+      x1(:,j) = x(1,:);
+      x2(:,j) = x(2,:);
+      j++;
     endfor
   endfor
+  plot(x1, x2, 'linewidth', 2);
 endfunction
