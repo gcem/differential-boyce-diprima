@@ -1,0 +1,1 @@
+function q2  A = [1 -2; 3 -4];  df2(A);  ax  f = @(t,c1,c2) c1 * [1;1] * exp(-t) + c2 * [2;3] * exp(-2*t);  slns2(f, -2:.4:2)endfunction

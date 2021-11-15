@@ -1,7 +1,7 @@
 %% draws on top of the current figure - clf if this is not desired
 %%
 %% f should take a row vector and return a 2xn matrix
-function slns2(f = @(t, c1, c2) [t;t], c1s = linspace(-1,1,5), c2s = linspace(-1,1,5), ...
+function slns2(f = @(t, c1, c2) [t;t], c1s = linspace(-1,1,5), c2s = c1s, ...
    tmin = -5, tmax = 5)
   t = linspace(tmin, tmax, 100);
   hold on
