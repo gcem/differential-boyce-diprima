@@ -3,6 +3,7 @@ function ob(varargin)
   p.addOptional('slope', 1, @isnumeric)
   p.addParameter('name', '__auto', @ischar);
   p.addParameter('style', '', @ischar);
+  p.addParameter('lw', 1, @isnumeric)
   p.parse(varargin{:});
   
   name = p.Results.name;
@@ -14,7 +15,7 @@ function ob(varargin)
   y = x * p.Results.slope;
   h = ishold;
   hold on
-  plot(x, y, p.Results.style, 'displayname', name);
+  plot(x, y, p.Results.style, 'displayname', name, 'linewidth', p.Results.lw);
   if !h
     hold off
   endif
