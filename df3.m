@@ -9,10 +9,10 @@ function df3(A, range = 3, n = 20)
   vectors = A * points;
   
   % normalize - may be a bad decision in some cases
-  norm = sqrt(sum(points.^2));
-  points ./= repmat(norm, 3, 1);
+  norm = sqrt(sum(vectors.^2));
+  vectors ./= repmat(norm, 3, 1);
   
-  quiver3(x1(:)', x2(:)', x3(:)', points(1,:), points(2,:), points(3,:), 1.3);
+  quiver3(x1(:)', x2(:)', x3(:)', vectors(1,:), vectors(2,:), vectors(3,:), 1.3);
   
   axis equal
   xlim(lims);

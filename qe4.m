@@ -1,6 +1,6 @@
 function qe4
   A = ones(3) - eye(3);
-  df3(A);
+  df3(A, 3, 10);
   ax3
   
   % plot the span of two eigenvectors
@@ -14,7 +14,4 @@ function qe4
   hold on
   surf(span(:,:,1), span(:,:,2), span(:,:,3), ...
     'facealpha', 0.2, 'displayname', 'span of two eigenvectors for r = -1')
-  
-  % something looks off - the arrows on the plane do not point
-  % towards the origin.    
 endfunction
