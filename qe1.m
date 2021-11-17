@@ -1,0 +1,1 @@
+function qe1  A = [-1/2, 1; -1, -1/2];  df2(A)  ax    f = @(t, c1, c2) (c1 * [sin(t);cos(t)] + c2 * [cos(t);-sin(t)]) ...    .* repmat(exp(-t/2), 2, 1);  legend off  slns2(f)  grid onendfunction
