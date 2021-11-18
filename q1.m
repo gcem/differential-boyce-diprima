@@ -1,0 +1,1 @@
+function q1  A = [3 -2; 4 -1];  df2(A)  ax  slns2(@f);endfunctionfunction xx = f(t, c1, c2)  cs = cos(2*t);  sn = sin(2*t);  ex = repmat(exp(t), 2, 1);  xx = ex .* (c1 * [cs; cs+sn] + c2 * [sn; sn-cs]);endfunction
