@@ -4,9 +4,9 @@ function ax3
   xl = xlim;
   yl = ylim;
   zl = zlim;
-  plot3(xl, [0 0], [0 0], 'k;axis;');
-  plot3([0 0], yl, [0 0], 'k;axis;');
-  plot3([0 0], [0 0], zl, 'k;axis;');
+  plot3(xl, [0 0], [0 0], 'k', 'handlevisibility', 'off');
+  plot3([0 0], yl, [0 0], 'k', 'handlevisibility', 'off');
+  plot3([0 0], [0 0], zl, 'k', 'handlevisibility', 'off');
   xlim(xl);
   ylim(yl);
   zlim(zl);
