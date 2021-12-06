@@ -18,6 +18,5 @@ function slns3(f = @(t, c1, c2, c3) [t;t;t], c1s = linspace(-1,1,5), c2s = c1s, 
       endfor
     endfor
   endfor
-  legend off
-  plot3(x1, x2, x3, 'linewidth', 2);
+  plot3(x1, x2, x3, 'linewidth', 2, 'handlevisibility', 'off');
 endfunction

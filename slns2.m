@@ -17,6 +17,5 @@ function slns2(f = @(t, c1, c2) [t;t], c1s = linspace(-1,1,5), c2s = c1s, ...
       j++;
     endfor
   endfor
-  legend off
-  plot(x1, x2, 'linewidth', 2);
+  plot(x1, x2, 'linewidth', 2, 'handlevisibility', 'off');
 endfunction
