@@ -1,0 +1,35 @@
+function q23
+  A = eye(3) * -1/4;
+  A(2,1) = -1;
+  A(1,2) = 1;
+  [v, r] = eig(A)
+  
+  # v * c = initialPt
+  # must be satisfied by the coefficient vector c.
+  initialPt = [1,2,4]';
+  vInv = inverse(v);
+  c = vInv * initialPt;
+  
+  v1 = v(:,1);
+  v2 = v(:,2);
+  v3 = v(:,3);
+  r = diag(r);
+  
+  t = linspace(-10, 4, 1000);
+  x = ...
+    c(1) * v1 * exp(t*r(1)) + ...
+    c(2) * v2 * exp(t*r(2)) + ...
+    c(3) * v3 * exp(t*r(3));
+  
+  # plot the solution
+  plot3(x(1,:), x(2,:), x(3,:));
+  xlabel x_1
+  ylabel x_2
+  zlabel x_3
+  ax3
+  grid on
+  
+  # plot the initial point
+  hold on
+  plot3(initialPt(1), initialPt(2), initialPt(3), 'ro', 'linewidth', 2);
+endfunction
