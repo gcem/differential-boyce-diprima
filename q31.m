@@ -15,7 +15,7 @@ function q31
   drawPlots(t,0, 0, c3, c4,2);
   
   # part e
-  t = linspace(0, 30, 1000);
+  t = linspace(0, 200, 1000);
   
   A = [1 0 1 0; 1 0 -1 0; 0 1 0 -sqrt(3); 0 1 0 sqrt(3)];
   AInv = inverse(A);
@@ -36,20 +36,11 @@ function q31
   subplot(3,3,7)
   hold on
   line = plot([t(ind) t(ind)], ylim, 'r', 'linewidth', 2, 'handlevisibility', 'off');
-  title({'y_1 and y_2 vs t';'CLICK HERE TO QUIT!'})
-  
-  anim = true;
-  function stopanim
-    anim = false;
-  endfunction
-  
-  # I could put the below loop inside a callback, which would be more
-  # elegant. however there is a bug causing some variables not to be captured
-  # by nested functions. that's why the loop is run synchronously.
-  set(gca, 'ButtonDownFcn', @stopanim);
   
   ind = 1;
-  while anim
+  # stop when figure is closed
+  # (figure can be closed in the middle of the loop but whatever)
+  while !isempty(get(groot, 'currentfigure'))
     set(p1, 'xdata', y1(ind), 'ydata', y3(ind));
     set(p2, 'xdata', y2(ind), 'ydata', y4(ind));
     set(line, 'xdata', [t(ind) t(ind)]);
