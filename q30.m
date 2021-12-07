@@ -1,5 +1,3 @@
-# this file is very ugly
-
 function q30
   t = linspace(0, 10, 1000);
   sn1 = sin(t);
@@ -44,14 +42,41 @@ function q30
   
   drawPlots(t,y1,y2,y3,y4,3)
   
-  anim1 = @() comet(y1,y3, 15 / numel(y1));
-  anim2 = @() comet(y2,y4, 15 / numel(y2));
+  # animate
+  ind = 1;
   subplot(3,3,8)
-  set(gca, 'ButtonDownFcn', anim1);
-  title 'CLICK ON THIS PLOT!'
+  hold on
+  p1 = plot(y1(ind), y3(ind), 'ro', 'linewidth', 2);
   subplot(3,3,9)
-  set(gca, 'ButtonDownFcn', anim2);
-  title 'CLICK ON THIS PLOT!'
+  hold on
+  p2 = plot(y2(ind), y4(ind), 'ro', 'linewidth', 2);
+  subplot(3,3,7)
+  hold on
+  line = plot([t(ind) t(ind)], ylim, 'r', 'linewidth', 2, 'handlevisibility', 'off');
+  title({'y_1 and y_2 vs t';'CLICK HERE TO QUIT!'})
+  
+  anim = true;
+  function stopanim
+    anim = false;
+  endfunction
+  
+  # I could put the below loop inside a callback, which would be more
+  # elegant. however there is a bug causing some variables not to be captured
+  # by nested functions. that's why the loop is run synchronously.
+  set(gca, 'ButtonDownFcn', @stopanim);
+  
+  ind = 1
+  while anim
+    set(p1, 'xdata', y1(ind), 'ydata', y3(ind));
+    set(p2, 'xdata', y2(ind), 'ydata', y4(ind));
+    set(line, 'xdata', [t(ind) t(ind)]);
+    ind++;
+    if ind > numel(y1)
+      ind = 1;
+    endif
+    pause(1e-3); # controls the speed
+  endwhile
+  close # can delete this line to keep the plot after the click
 endfunction
 
 function drawPlots(t, y1, y2, y3, y4, row)
