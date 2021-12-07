@@ -1,4 +1,4 @@
-%% Same as df3, but A is a 3x3 matrix and the drawn direction field is three
+%% Same as df2, but A is a 3x3 matrix and the drawn direction field is three
 %% dimensional
 
 function df3(A, range = 3, n = 20)
