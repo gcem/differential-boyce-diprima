@@ -1,0 +1,16 @@
+/* Put this definition in ~/.maxima/maxima-init.mac or ~/.maxima/wxmaxima-init.mac
+ * or whereever the initialization scripts are in your system.
+ *
+ * Note to self: This file is hard-linked to the file in ~/.maxima
+ * (ln)
+ */
+
+E(X) := block([_ev: eigenvectors(X)],
+    disp("Algebraic Multiplicities:"),
+    disp(makelist(concat(second(first(_ev))[i], " times"), i, 1, length(first(first(_ev))))),
+    vals:first(first(_ev)),
+    vecs:makelist(transpose(second(_ev)[n][1]), n, 1, length(vals)),
+    display(vals),
+    display(vecs),
+    ""
+)$
