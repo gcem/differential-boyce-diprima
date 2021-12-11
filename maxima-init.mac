@@ -5,11 +5,12 @@
  * (ln)
  */
 
-E(X) := block([_ev: eigenvectors(X)],
+E(X) := block([_ev: eigenvectors(X), _vecflat],
     disp("Algebraic Multiplicities:"),
     disp(makelist(concat(second(first(_ev))[i], " times"), i, 1, length(first(first(_ev))))),
     vals:first(first(_ev)),
-    vecs:makelist(transpose(second(_ev)[n][1]), n, 1, length(vals)),
+    vecs:map(transpose, apply(append, second(_ev))),
+    /* apply(append, ...) flattens one level */
     display(vals),
     display(vecs),
     ""
