@@ -15,3 +15,5 @@ E(X) := block([_ev: eigenvectors(X), _vecflat],
     display(vecs),
     ""
 )$
+
+iltmat(A,s,t) := matrixmap(lambda([x], ilt(x, s, t)), A)$
