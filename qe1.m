@@ -21,8 +21,8 @@ function qe1
   y = 1 / 4 * t - 3 / 16 + 19 / 16 * exp(4 * t);
   plot(t, y, 'r--', 'displayname', ';Actual solution;')
 
-  th = text(1, 100, '', 'fontname', 'Mono'); # hopefully a monospaced font
-  lh = vert(-1, 'style', 'r--')
+  th = text(1, 100, '', 'fontname', 'Mono', 'fontsize', 14); # hopefully a monospaced font
+  lh = vert(-1, 'style', 'r--');
   set(lh, 'handlevisibility', 'off')
   set(f,
     'windowbuttonmotionfcn', {@mouseMove, th, lh, hValues, yValues},
