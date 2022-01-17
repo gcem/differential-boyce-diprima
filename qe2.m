@@ -40,8 +40,9 @@ function mouseMove(h, data, textHandle, lineHandle, hValues, yValues)
   position(1) = t = clamp(position(1), xlim);
 
   yReal = 1 / 4 * t - 3 / 16 + 19 / 16 * exp(4 * t);
-  errorTexts = cell(1, length(hValues) + 1);
-  errorTexts{1} = 'Errors:';
+  errorTexts = cell(1, length(hValues) + 2);
+  errorTexts{1} = '  h   |   Error';
+  errorTexts{2} = '---------------';
   for i = 1:length(hValues)
     h = hValues(i);
     index = clamp(t / h + 1, [1, length(yValues{i})]);
@@ -59,7 +60,7 @@ function mouseMove(h, data, textHandle, lineHandle, hValues, yValues)
 
     # find percent error
     error = abs(estimate - yReal) / yReal * 100;
-    errorTexts{i+1} = sprintf('h = %.3f \\rightarrow Error = %5.2f%%', h, error);
+    errorTexts{i+2} = sprintf('%5.3f | %6.2f%%', h, error);
   endfor
 
   set(lineHandle, 'xdata', ones(1,2) * t)
